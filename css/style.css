@@ -355,6 +355,23 @@ img {
   50% { transform: translate(-10px, 12px); }
 }
 
+/* Decorative — additional circle rings */
+.hero__circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__circle--1 {
+  bottom: -60px;
+  left: -80px;
+  width: 360px;
+  height: 360px;
+  border: 1.5px solid rgba(176, 58, 46, 0.06);
+  animation: floatSlow 9s ease-in-out infinite;
+}
+
 /* Background watermark text */
 .hero__bg-text {
   position: absolute;
@@ -415,11 +432,10 @@ img {
 .hero__name {
   font-family: var(--font-cn);
   font-weight: 700;
-  font-size: clamp(2.5rem, 7vw, 7rem);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
   color: var(--color-text);
-  line-height: 1.1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
   overflow-wrap: break-word;
   max-width: 100%;
   transition: letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1),
@@ -655,7 +671,8 @@ img {
 /* --- Left sidebar (About) --- */
 .about__sidebar {
   position: sticky;
-  top: calc(var(--nav-height) + 2rem);
+  top: 25vh;
+  transform: translateY(-50%);
   align-self: start;
 }
 
@@ -1128,7 +1145,7 @@ img {
 /* Tablet (769px - 1024px) */
 @media (max-width: 1024px) {
   .hero__name {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
   }
 
   .hero__bg-text {
@@ -1186,7 +1203,8 @@ img {
   }
 
   .hero::before,
-  .hero::after {
+  .hero::after,
+  .hero__circle {
     display: none;
   }
 
@@ -1219,7 +1237,7 @@ img {
   }
 
   .hero__name {
-    font-size: clamp(2.2rem, 11vw, 3.5rem);
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
   }
 
   .hero__metrics {
@@ -1352,7 +1370,7 @@ img {
   }
 
   .hero__name {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .hero__desc {
